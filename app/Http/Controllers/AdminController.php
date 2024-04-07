@@ -107,4 +107,9 @@ class AdminController extends Controller {
 		$password = $request->input('password');
 		DB::insert("UPDATE `admin` SET `name`='".$name."', `password`='".$password."' WHERE `id`=".$id);
 	}
+	
+	public function delete_account(Request $request) {
+		$id = intval($request->input('id'));
+		DB::select("DELETE FROM `account` WHERE `id`=".$id);
+	}
 }

@@ -16,3 +16,4 @@ Route::post('/admin/search_admin', [AdminController::class, 'search_admin']);
 Route::post('/admin/add', [AdminController::class, 'add_admin']);
 Route::post('/admin/delete', [AdminController::class, 'delete_admin']);
 Route::post('/admin/update', [AdminController::class, 'update_admin']);
+Route::post('/admin/delete_account', [AdminController::class, 'delete_account']);
