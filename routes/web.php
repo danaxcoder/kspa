@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,3 +18,4 @@ Route::post('/admin/add', [AdminController::class, 'add_admin']);
 Route::post('/admin/delete', [AdminController::class, 'delete_admin']);
 Route::post('/admin/update', [AdminController::class, 'update_admin']);
 Route::post('/admin/delete_account', [AdminController::class, 'delete_account']);
+Route::post('/add', [UserController::class, 'add']);
