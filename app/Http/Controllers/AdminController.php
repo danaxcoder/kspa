@@ -48,7 +48,7 @@ class AdminController extends Controller {
 	
 	public function get_accounts(Request $request) {
 		$appID = intval($request->input('app_id'));
-		$accounts = DB::select("SELECT * FROM `account` WHERE `app_id`=".$appID." ORDER BY `date`");
+		$accounts = DB::select("SELECT * FROM `account` WHERE `app_id`=".$appID." ORDER BY `date` DESC");
 		return array(
 			'response_code' => 0,
 			'data' => array(
@@ -59,7 +59,7 @@ class AdminController extends Controller {
 	
 	public function search_account(Request $request) {
 		$query = $request->input('query');
-		$accounts = DB::select("SELECT * FROM `account` WHERE `phone` LIKE '%".$query."%' ORDER BY `date`");
+		$accounts = DB::select("SELECT * FROM `account` WHERE `phone` LIKE '%".$query."%' ORDER BY `date` DESC");
 		return array(
 			'response_code' => 0,
 			'data' => array(
